@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Account</title>
+    <link rel="stylesheet" href="account.css" />
     <meta charset="UTF-8">
   </head>
   <body>
-      <label>Prezime: </label><input type = "text" id = "prezime"><br><br>
-      <label>Ime: </label><input type = "text" id = "ime"><br><br>
-      <label>Godiste: </label><input type = "text" id = "godiste"><br><br>
-      <button id="unesi" onclick = "unesi()">Unesi</button>
+    <div class="form">
+      <label>Username: </label><input type = "text" id = "username"><br><br>
+      <label>Email: </label><input type = "email" id = "email"><br><br>
+      <label>Password: </label><input type = "password" id = "password"><br><br>
+      <button id="unesi" onclick = "unesi()">Sign in</button>
       <button onclick = "uvezi()">Uvezi</button>
-      <button id="izmjeni" onclick = "izmjeni()">Izmjeni</button><br><br>
       <table id = "tablica">
 
       </table>
-      <script src="script.js"></script>
-  </body>
+      <script src="account.js"></script>
+    </div>
+    </body>
 </html>

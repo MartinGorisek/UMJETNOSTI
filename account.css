@@ -1,0 +1,20 @@
+body{
+    background-color: #f2f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.form{
+    text-align:left;
+    padding: 50px;
+    border-radius:20px;
+    border: 2px solid #687c8f;
+}
+input{
+    height: 2vh;
+    width: 15vh;
+    border: 2px solid #687c8f;
+    border-radius:5px;
+}
