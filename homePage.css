@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.left, .right, .middle{
+    background-image: url("https://blog.delivermytune.com/wp-content/uploads/2024/11/easiest-musical-instrument-to-learn.png");
+    background-size: cover;
+    background-attachment: fixed;
+    width: 33%;
+    height: 90vh;
+    transition: 1s;
+}
+
+.middle{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5fab2701e889c67ee31bfa4d/1613190146375-4OI3VHP0NTG2UNCEDMIJ/Country+Road+Low+Res.jpg?format=1500w");
+    width: 34%;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.right{
+    background-image: url("https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/getty_499578755_377423.jpg");
+}
+
+.left:hover, .middle:hover, .right:hover{
+    width: 50%;
+    transition: 2s;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
