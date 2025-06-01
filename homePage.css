@@ -38,3 +38,70 @@ body{
     position: relative;
     z-index: 1;
 }
+  
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #687c8f;
+    
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #ddd;
+    flex-direction: column;
+    z-index: 1;
+  }
+  
+  .topnav a {
+    color:black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: #687c8f;
+  }
+  
+  .topnav a:hover {
+    background-color: #d1d1d1;
+    color: black;
+  }
+  
+  .active {
+    background-color: #687c8f;
+    color: #687c8f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .active img {
+    width: 20px;
+    height: auto;
+  }
+
+  .naslov{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 300px;
+    margin-left: 810px;
+    margin-top: 400px;
+    border: solid;
+    border-color: wheat;
+    border-radius: 10px;
+    font-size: large;
+  }
+
+  a:link{
+    text-decoration: none;
+    color: rgb(13, 84, 105);
+  }
