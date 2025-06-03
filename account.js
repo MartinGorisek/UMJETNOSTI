@@ -1,50 +1,76 @@
-class Ucenik {
-  constructor(prezime, ime, godiste){
-    this.prezime = prezime;
-    this.ime = ime;
-    this.godiste = godiste;
-  }
-  dob() {
-    return 2025 - this.godiste;
+class User {
+  constructor(username, email, password){
+    this.username = username;
+    this.email = email;
+    this.password = password;
   }
 }
 
-let ucenici = [];
-let ucenici_str = localStorage.getItem("ucenici");
-if(ucenici_str != null) {
-  let parseData = JSON.parse(ucenici_str);
-  ucenici = parseData.map(obj => new Ucenik(obj.prezime, obj.ime, obj.godiste));
+let users = [];
+let users_str = localStorage.getItem("users");
+if(users_str != null) {
+  let parseData = JSON.parse(users_str);
+  users = parseData.map(obj => new User(obj.username, obj.email, obj.password));
 }
-$("#izmjeni").hide();
 let indexZaIzmjenu = null;
 ispisTablice();
 
-
 function unesi() {
-  let prezime = document.getElementById("prezime").value;
-  let ime = document.getElementById("ime").value;
-  let godiste = document.getElementById("godiste").value;
-  ucenici.push(new Ucenik(prezime, ime, godiste));
+  let username = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  users.push(new User(username, email, password));
   ispisTablice();
   spremi();
 }
 
 function ispisTablice() {
   let tablica = document.getElementById("tablica");
-  tablica.innerHTML = "<tr><th>RB</th><th>Prezime</th><th>Ime</th><th>Godište</th><th>Dob</th><th>U</th><th>B</th></tr>";
-  for(let i = 0; i < ucenici.length; i++) {
-    tablica.innerHTML += "<tr><td>"+(i+1)+"</td><td>"+ucenici[i].prezime+"</td><td>"+ucenici[i].ime+"</td><td>"+ucenici[i].godiste+"</td><td>"+ucenici[i].dob()+"</td><td><img onclick='uredi("+ i +")' src='https://assets.onecompiler.app/42t25vc6w/43d5gaadf/edit_icon.png'></td><td><img onclick='brisi("+ i +")' src='https://assets.onecompiler.app/42t25vc6w/43d5gaadf/delete_icon.png'></td></tr>";
+  tablica.innerHTML = "<tr><th>RB</th><th>Username</th><th>Email</th><th>Password</th><th>Edit</th><th>Delete</th></tr>";
+  for(let i = 0; i < users.length; i++) {
+    tablica.innerHTML += `<tr>
+      <td>${i+1}</td>
+      <td>${users[i].username}</td>
+      <td>${users[i].email}</td>
+      <td>${users[i].password}</td>
+      <td><button onclick='uredi(${i})'>✏️</button></td>
+      <td><button onclick='brisi(${i})'>🗑️</button></td>
+    </tr>`;
   }
 }
+
 function spremi(){
-  localStorage.setItem("ucenici", JSON.stringify(ucenici));
+  localStorage.setItem("users", JSON.stringify(users));
 }
 
 function brisi(index){
-  ucenici.splice(index,1)
+  users.splice(index,1)
   ispisTablice();
   spremi();
 }
+
+function uredi(index){
+  document.getElementById("username").value = users[index].username;
+  document.getElementById("email").value = users[index].email;
+  document.getElementById("password").value = users[index].password;
+  indexZaIzmjenu = index;
+  document.getElementById("unesi").innerText = "Izmjeni";
+  document.getElementById("unesi").setAttribute("onclick", "izmjeni()");
+}
+
+function izmjeni(){
+  if(indexZaIzmjenu != null){
+    users[indexZaIzmjenu].username = document.getElementById("username").value;
+    users[indexZaIzmjenu].email = document.getElementById("email").value;
+    users[indexZaIzmjenu].password = document.getElementById("password").value;
+  }
+  ispisTablice();
+  spremi();
+  document.getElementById("unesi").innerText = "Sign in";
+  document.getElementById("unesi").setAttribute("onclick", "unesi()");
+  indexZaIzmjenu = null;
+}
+
 function uvezi() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -52,41 +78,18 @@ function uvezi() {
       let parser = new DOMParser();
       let xmlDoc = parser.parseFromString(this.responseText,"text/xml");
       
-      let ucenikNodes = xmlDoc.getElementsByTagName("ucenik");
-      for(let i = 0; i < ucenikNodes.length; i++){
-        let prezime = ucenikNodes[i].getElementsByTagName("prezime")[0].textContent;
-        let ime = ucenikNodes[i].getElementsByTagName("ime")[0].textContent;
-        let godiste = ucenikNodes[i].getElementsByTagName("godiste")[0].textContent;
+      let userNodes = xmlDoc.getElementsByTagName("user");
+      for(let i = 0; i < userNodes.length; i++){
+        let username = userNodes[i].getElementsByTagName("username")[0].textContent;
+        let email = userNodes[i].getElementsByTagName("email")[0].textContent;
+        let password = userNodes[i].getElementsByTagName("password")[0].textContent;
         
-        ucenici.push(new Ucenik(prezime, ime, parseInt(godiste)));
+        users.push(new User(username, email, password));
       }
       ispisTablice();
       spremi();
     }
   };
-  xhttp.open("GET", "podatci.html", true);
+  xhttp.open("GET", "accountData.xml", true); // You need to create this XML
   xhttp.send();
-}
-
-function uredi(index){
-  $("#unesi").hide();
-  $("#izmjeni").show();
-  
-  $("#prezime").val(ucenici[index].prezime);
-  $("#ime").val(ucenici[index].ime);
-  $("#godiste").val(ucenici[index].godiste);
-  
-  indexZaIzmjenu = index;
-}
-function izmjeni(){
-  $("#unesi").show();
-  $("#izmjeni").hide();
-
-  if(indexZaIzmjenu != null){
-    ucenici[indexZaIzmjenu].prezime = $("#prezime").val();
-    ucenici[indexZaIzmjenu].ime = $("#ime").val();
-    ucenici[indexZaIzmjenu].godiste = $("#godiste").val();
-  } 
-  ispisTablice();
-  spremi();
 }
