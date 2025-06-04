@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Account</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="account.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
@@ -13,7 +13,7 @@
     <div class="form">
       <div class="formStyle">
         <img id="userImg" src="https://www.svgrepo.com/show/453446/account.svg"><br><br>
-        
+
         <label>Username: </label>
         <input type="text" id="username"><br><br>
 
@@ -21,13 +21,18 @@
         <input type="email" id="email"><br><br>
 
         <label>Password: </label>
-        <input type="password" id="password"><br><br>
+        <input type="password" id="password">
+        <input type="checkbox" onclick="togglePassword()"> Prikaži lozinku<br><br>
 
         <button id="unesi" onclick="unesi()">Sign in</button>
         <button onclick="uvezi()">Uvezi</button>
         
-        <br><br>
-        <table id="tablica" border="1"></table>
+        <button onclick="prikaziPodatke()">Prikaži podatke</button>
+        <div id="dataSection" style="display: none;">
+          <button onclick="exportJSON()">Izvezi JSON</button><br><br>
+          <table id="tablica" border="1"></table>
+        </div>
+        
       </div>
     </div>
 
