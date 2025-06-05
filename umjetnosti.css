@@ -1,9 +1,79 @@
-body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+
+/* Top navigation container */
+
+/* Sticky navbar */
+.navbar {
+  background-color: #a1b1d4;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px, solid, #555;
+}
+
+/* Hamburger icon on right */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Menu container */
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: #a1b1d4;
+  animation: dropDown 0.4s ease-out;
+}
+
+/* Menu links */
+.menu a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+}
+
+.menu a:hover {
+  background-color: #496c8a;
+}
+
+/* Animation */
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+  
+  /* Show menu */
+  .menu.show {
+    display: flex;
+  }
+  
+  .acc {
+    height: 20x;
+    width: 20px;
+  }
+
+  body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/pipes.png");
+      }
+
 .container {
       padding: 20px;
       max-width: 1200px;

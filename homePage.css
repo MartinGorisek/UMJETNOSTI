@@ -1,107 +1,146 @@
-body{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: nowrap;
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
 }
 
-.left, .right, .middle{
-    background-image: url("https://blog.delivermytune.com/wp-content/uploads/2024/11/easiest-musical-instrument-to-learn.png");
-    background-size: cover;
-    background-attachment: fixed;
-    width: 33%;
-    height: 90vh;
-    transition: 1s;
+/* Top navigation container */
+
+/* Sticky navbar */
+.navbar {
+background-color: #2d693f;
+padding: 10px 20px;
+color: white;
+position: sticky;
+top: 0;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: 1px, solid, #555;
 }
 
-.middle{
-    background-image: url("https://images.squarespace-cdn.com/content/v1/5fab2701e889c67ee31bfa4d/1613190146375-4OI3VHP0NTG2UNCEDMIJ/Country+Road+Low+Res.jpg?format=1500w");
-    width: 34%;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
+/* Hamburger icon on right */
+.hamburger {
+font-size: 24px;
+cursor: pointer;
+background: none;
+border: none;
+color: white;
+float: inline-end;
 }
 
-.right{
-    background-image: url("https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/getty_499578755_377423.jpg");
+/* Menu container */
+.menu {
+display: none;
+flex-direction: column;
+background-color: #56945b;
+animation: dropDown 0.4s ease-out;
 }
 
-.left:hover, .middle:hover, .right:hover{
-    width: 50%;
-    transition: 2s;
+/* Menu links */
+.menu a {
+color: white;
+padding: 12px 20px;
+text-decoration: none;
+border-bottom: 1px solid #555;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    z-index: 1;
+.menu a:hover {
+background-color: #38695b;
 }
-  
-  .topnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #687c8f;
-    
-    position: relative;
-  }
-  
-  .topnav #myLinks {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background-color: #ddd;
+
+/* Animation */
+@keyframes dropDown {
+0% {
+opacity: 0;
+transform: translateY(-20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Show menu */
+.menu.show {
+display: flex;
+}
+
+.active img {
+  width: 20px;
+  height: auto;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh;
+}
+
+.left, .right, .middle {
+  background-image: url("https://blog.delivermytune.com/wp-content/uploads/2024/11/easiest-musical-instrument-to-learn.png");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 33%;
+  height: 100%;
+  transition: 1s;
+}
+
+.middle {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5fab2701e889c67ee31bfa4d/1613190146375-4OI3VHP0NTG2UNCEDMIJ/Country+Road+Low+Res.jpg?format=1500w");
+  width: 34%;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.right {
+  background-image: url("https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/getty_499578755_377423.jpg");
+}
+
+.left:hover, .middle:hover, .right:hover {
+  width: 50%;
+  transition: 2s;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.naslov {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 300px;
+  margin-left: 810px;
+  margin-top: 400px;
+  border: solid;
+  border-color: wheat;
+  border-radius: 10px;
+  font-size: large;
+}
+
+@media (max-width: 900px) {
+  .main-content {
     flex-direction: column;
-    z-index: 1;
-  }
-  
-  .topnav a {
-    color:black;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    display: block;
-  }
-  
-  .topnav a.icon {
-    background: #687c8f;
-  }
-  
-  .topnav a:hover {
-    background-color: #d1d1d1;
-    color: black;
-  }
-  
-  .active {
-    background-color: #687c8f;
-    color: #687c8f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .active img {
-    width: 20px;
     height: auto;
   }
-
-  .naslov{
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 300px;
-    margin-left: 810px;
-    margin-top: 400px;
-    border: solid;
-    border-color: wheat;
-    border-radius: 10px;
-    font-size: large;
+  .left, .middle, .right {
+    width: 100%;
+    height: 30vh;
   }
-
-  a:link{
-    text-decoration: none;
-    color: rgb(13, 84, 105);
+  .left:hover, .middle:hover, .right:hover {
+    width: 100%;
   }
+}
+
+.acc {
+    height: 20x;
+    width: 20px;
+} 

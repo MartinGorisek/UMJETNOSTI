@@ -12,6 +12,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border: 1px, solid, #555;
     }
 
     /* Hamburger icon on right */
@@ -101,7 +102,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    min-height: 200px;
+    max-height: 200px;
   }
   .top-text, .mid-text {
     border: 2px solid #000;
