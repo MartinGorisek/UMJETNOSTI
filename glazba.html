@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna</title>
+    <link rel="stylesheet" href="glazba.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- Top Navigation Menu -->
+
+  <div class="navbar">
+    <a  class="acco" href="account.html">
+      <img class="acc" src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png">
+    </a>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div class="menu" id="dropdownMenu">
+    <a href="homePage.html">Home</a>
+    <a href="umjetnosti.html">Slikarska umjetnost</a>
+    <a href="knjizevnost.html">Književna umjetnost</a>
+  </div>
+
+<div class="container">
+  <div class="main-grid">
+    <div class="left-picture" style="background-color:#c285d4;">picture</div>
+    <div>
+      <div class="top-text" style="background-color:#c285d4;">text</div>
+      <div class="mid-text" style="background-color:#c285d4;">text</div>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="bottom-texts">
+      <div class="bottom-text" style="background-color:#c285d4;">text</div>
+      <div class="bottom-text" style="background-color:#c285d4;">text</div>
+    </div>
+    <div class="right-picture" style="background-color:#c285d4;">picture</div>
+  </div>
+  <div class="extra-row">
+    <div class="extra-text" style="background-color:#c285d4;">text</div>
+    <div class="extra-text" style="background-color:#c285d4;">text</div>
+  </div>
+  <div class="extra-row">
+    <div class="extra-text" style="background-color:#c285d4;">text</div>
+    <div class="extra-text" style="background-color:#c285d4;">text</div>
+  </div>
+  <div class="final-row">
+    <div class="final-picture" style="background-color:#c285d4;">picture</div>
+    <div class="final-texts">  
+      <div class="final-text" style="background-color:#c285d4;">text</div>
+      <div class="final-text" style="background-color:#c285d4;">text</div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+ function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("show");
+    }
+</script>
+    
+</html>
