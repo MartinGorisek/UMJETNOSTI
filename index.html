@@ -9,11 +9,13 @@
 </head>
 <body>
 
-    <!-- Top Navigation Menu -->
-    <div class="topnav">
-      <a class="active" href="account.html">
-        <img src="https://www.svgrepo.com/show/453446/account.svg"> 
+         <!-- Top Navigation Menu -->
+
+  <div class="navbar">
+    <a  class="acco" href="account.html">
+      <img class="acc" src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png">
     </a>
+<<<<<<< Updated upstream
       <div id="myLinks">
         <a href="slike.html">Glikarsak umjetnost</a>
         <a href="glazba.html">Glazbena umjetnost</a>
@@ -26,6 +28,20 @@
 
     <div class="naslov">
       <a href="homePage.html">
+=======
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div class="menu" id="dropdownMenu">
+    <a href="homePage.html">Home</a>
+    <a href="umjetnosti.html">Slikarska umjetnost</a>
+    <a href="knjizevnost.html">Književna umjetnost</a>
+    <a href="glazba.html">glazbena umjetnost</a>
+  </div>
+
+    <div class="naslov">
+      <a href="homePage.html" style="text-decoration: none; color: #568fc9;">
+>>>>>>> Stashed changes
         <div>
           <p>Početak</p>
         </div>
@@ -33,14 +49,10 @@
     </div>
     
     <script>
-      function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+      function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("show");
+    }
     </script>
     </body>
 </html>
