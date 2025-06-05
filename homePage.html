@@ -10,12 +10,9 @@
         margin: 0;
         padding: 0;
         display: flex;
-        flex-direction: column; /* Stack children vertically */
+        flex-direction: column;
       }
 
-      /* Top navigation container */
-
-     /* Sticky navbar */
      .navbar {
       background-color: #2d693f;
       padding: 10px 20px;
@@ -29,7 +26,6 @@
       border: 1px, solid, #555;
     }
 
-    /* Hamburger icon on right */
     .hamburger {
       font-size: 24px;
       cursor: pointer;
@@ -39,7 +35,6 @@
       float: inline-end;
     }
 
-  /* Menu container */
   .menu {
     display: none;
     flex-direction: column;
@@ -47,7 +42,6 @@
     animation: dropDown 0.4s ease-out;
   }
 
-  /* Menu links */
   .menu a {
     color: white;
     padding: 12px 20px;
@@ -59,7 +53,6 @@
     background-color: #38695b;
   }
 
-  /* Animation */
   @keyframes dropDown {
     0% {
       opacity: 0;
@@ -71,7 +64,6 @@
     }
   }
 
-  /* Show menu */
   .menu.show {
     display: flex;
   }
@@ -134,6 +126,10 @@
         font-size: large;
       }
 
+      .left, .middle, .right {
+        cursor: pointer;
+      }
+
       @media (max-width: 900px) {
         .main-content {
           flex-direction: column;
@@ -151,27 +147,24 @@
       .acc {
           height: 20x;
           width: 20px;
-      } 
+      }
+
+      .centerText {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 15px 25px;
+        border-radius: 10px;
+        border: 2px solid white;
+        text-align: center;
+      }
+
     </style>
   </head>
 
   <body>
-<<<<<<< Updated upstream
-    <div class="topnav">
-      <a class="active" href="account.html">
-        <img src="https://www.svgrepo.com/show/453446/account.svg"> 
-      </a>
-      <div id="myLinks">
-        <a href="slike.html">Glikarsak umjetnost</a>
-        <a href="glazba.html">Glazbena umjetnost</a>
-        <a href="knjizevnost.html">Književna umjetnost</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-=======
-     <!-- Top Navigation Menu -->
 
   <div class="navbar">
     <a  class="acco" href="account.html">
@@ -185,14 +178,17 @@
     <a href="umjetnosti.html">Slikarska umjetnost</a>
     <a href="knjizevnost.html">Književna umjetnost</a>
   </div>
->>>>>>> Stashed changes
 
     <div class="main-content">
-      <div class="left">
-        <div class="center"><p class="centerText">umjetnosti</p></div>
+      <div class="left" onclick="location.href='umjetnosti.html'">
+        <div class="center"><p class="centerText">Glazba</p></div>
       </div>
-      <div class="middle"></div>
-      <div class="right"></div>
+      <div class="middle" onclick="location.href='umjetnosti.html'">
+        <div class="center"><p class="centerText">Slikarstvo</p></div>
+      </div>
+      <div class="right" onclick="location.href='umjetnosti.html'">
+        <div class="center"><p class="centerText">Stvaralaštvo</p></div>
+      </div>
     </div>
 
     <script>
