@@ -16,7 +16,6 @@ if(users_str != null) {
 let indexZaIzmjenu = null;
 ispisTablice();
 
-// ========== VALIDACIJA UNOSA ========== //
 function unesi() {
   let username = document.getElementById("username").value.trim();
   let email = document.getElementById("email").value.trim();
@@ -44,7 +43,6 @@ function clearForm() {
   document.getElementById("password").value = "";
 }
 
-// ========== ISPIŠI TABLICU ========== //
 function ispisTablice(podaci = users) {
   let tablica = document.getElementById("tablica");
   tablica.innerHTML = `<tr>
@@ -109,43 +107,16 @@ function izmjeni(){
   indexZaIzmjenu = null;
 }
 
-// ========== TOGGLE LOZINKE ========== //
 function togglePassword() {
   let pw = document.getElementById("password");
   pw.type = pw.type === "password" ? "text" : "password";
 }
 
-// ========== SORTIRANJE PO USERNAMEU ========== //
 function sortirajPoImenu() {
   users.sort((a, b) => a.username.localeCompare(b.username));
   ispisTablice();
 }
 
-// ========== UVOZ PODATAKA ========== //
-function uvezi() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if(this.readyState == 4 && this.status == 200) {
-      let parser = new DOMParser();
-      let xmlDoc = parser.parseFromString(this.responseText,"text/xml");
-
-      let userNodes = xmlDoc.getElementsByTagName("user");
-      for(let i = 0; i < userNodes.length; i++){
-        let username = userNodes[i].getElementsByTagName("username")[0].textContent;
-        let email = userNodes[i].getElementsByTagName("email")[0].textContent;
-        let password = userNodes[i].getElementsByTagName("password")[0].textContent;
-
-        users.push(new User(username, email, password));
-      }
-      ispisTablice();
-      spremi();
-    }
-  };
-  xhttp.open("GET", "accountData.xml", true);
-  xhttp.send();
-}
-
-// ========== IZVOZ U JSON ========== //
 function exportJSON() {
   const blob = new Blob([JSON.stringify(users, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
