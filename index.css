@@ -4,10 +4,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
+  overflow-y: hidden;
 }
 
+
+
+
 .navbar {
-  background-color: #687c8f;
+  background-color: #2d693f;
   padding: 10px 20px;
   color: white;
   position: sticky;
