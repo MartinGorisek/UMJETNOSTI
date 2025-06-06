@@ -1,73 +1,65 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image:url("https://samuelearp.com/wp-content/uploads/2023/10/IMG_1512-scaled.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:url("https://samuelearp.com/wp-content/uploads/2023/10/IMG_1512-scaled.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #687c8f;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px, solid, #555;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  float: inline-end;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: #687c8f;
+  animation: dropDown 0.4s ease-out;
+}
+
+.menu a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+}
+
+.menu a:hover {
+  background-color: #568fc9;
+}
+
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-       /* Top navigation container */
-
-     /* Sticky navbar */
-     .navbar {
-      background-color: #687c8f;
-      padding: 10px 20px;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px, solid, #555;
-    }
-
-    /* Hamburger icon on right */
-    .hamburger {
-      font-size: 24px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: white;
-      float: inline-end;
-    }
-
-  /* Menu container */
-  .menu {
-    display: none;
-    flex-direction: column;
-    background-color: #687c8f;
-    animation: dropDown 0.4s ease-out;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  /* Menu links */
-  .menu a {
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-bottom: 1px solid #555;
-  }
-
-  .menu a:hover {
-    background-color: #568fc9;
-  }
-
-  /* Animation */
-  @keyframes dropDown {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Show menu */
-  .menu.show {
-    display: flex;
-  }
+.menu.show {
+  display: flex;
+}
   
    
 .acc {
@@ -75,14 +67,24 @@ body {
   width: 20px;
 }
 
-  .naslov{
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 300px;
-    margin-left: 810px;
-    margin-top: 400px;
-    border: solid;
-    border-color: wheat;
-    border-radius: 10px;
-    font-size: large;
-  }
+.poravnaj{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.naslov{
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 10px;
+  border: 2px solid white;
+  text-align: center;
+}
