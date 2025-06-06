@@ -130,3 +130,8 @@ function exportJSON() {
 function prikaziPodatke() {
   document.getElementById("dataSection").style.display = "block";
 }
+
+function toggleMenu() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.classList.toggle("show");
+}

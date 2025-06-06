@@ -1,3 +1,72 @@
+ /* Top navigation container */
+
+     /* Sticky navbar */
+     .navbar {
+      background-color: #687c8f;
+      padding: 10px 20px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px, solid, #555;
+    }
+
+    /* Hamburger icon on right */
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      float: inline-end;
+    }
+
+  /* Menu container */
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #687c8f;
+    animation: dropDown 0.4s ease-out;
+  }
+
+  /* Menu links */
+  .menu a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+  }
+
+  .menu a:hover {
+    background-color: #568fc9;
+  }
+
+  /* Animation */
+  @keyframes dropDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Show menu */
+  .menu.show {
+    display: flex;
+  }
+  
+   
+.acc {
+  height: 20x;
+  width: 20px;
+}
+
 body {
       margin: 0;
       padding: 0;
