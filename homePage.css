@@ -144,3 +144,16 @@ display: flex;
     height: 20x;
     width: 20px;
 } 
+
+.centerText {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: 2px solid white;
+  text-align: center;
+}
+
