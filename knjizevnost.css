@@ -2,9 +2,9 @@
 
      /* Sticky navbar */
      .navbar {
-        background-color: #687c8f;
+        background-color: wheat;
         padding: 10px 20px;
-        color: white;
+        color: rgb(0, 0, 0);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -20,7 +20,7 @@
         cursor: pointer;
         background: none;
         border: none;
-        color: white;
+        color: rgb(0, 0, 0);
         float: inline-end;
       }
   
@@ -28,20 +28,20 @@
     .menu {
       display: none;
       flex-direction: column;
-      background-color: #687c8f;
+      background-color: wheat;
       animation: dropDown 0.4s ease-out;
     }
   
     /* Menu links */
     .menu a {
-      color: white;
+      color: rgb(0, 0, 0);
       padding: 12px 20px;
       text-decoration: none;
       border-bottom: 1px solid #555;
     }
   
     .menu a:hover {
-      background-color: #568fc9;
+      background-color: rgb(221, 191, 135);
     }
   
     /* Animation */
@@ -72,7 +72,7 @@
           padding: 0;
           box-sizing: border-box;
           font-family: Arial, sans-serif;
-          background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/pipes.png");
+          background-image: url("https://www.shutterstock.com/image-vector/seamless-handwritten-text-600nw-28825682.jpg");
         }
   
   .container {

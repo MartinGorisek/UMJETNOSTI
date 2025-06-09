@@ -4,45 +4,53 @@
         <title>Umjetnosti</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="umjetnosti.css" />
+        <link rel="stylesheet" href="knjizevnost.css">
     </head>
 
 <body>
-  <nav>
+
+  <div class="navbar">
     <a  class="acco" href="account.html">
-        <img class="acc" src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png">
-      </a>
-    
-  </nav>
+      <img class="acc" src="https://cdn-icons-png.flaticon.com/512/3276/3276535.png">
+    </a>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div class="menu" id="dropdownMenu">
+    <a href="homePage.html">Home</a>
+    <a href="umjetnosti.html">Slikarska umjetnost</a>
+    <a href="glazba.html">Glazbena umjetnost</a>
+  </div>
+
   <div class="container">
 
     <div class="main-grid">
-      <div class="left-picture"><img src="" style="max-height: 100%; max-width: 100%; object-fit:cover;"></div>
+      <div class="left-picture"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Old_book_bindings.jpg" style="max-height: 100%; max-width: 100%; object-fit:cover;"></div>
       <div>
-        <div class="top-text" style="background-color:#a1b1d4;">text</div>
-        <div class="mid-text" style="background-color:#a1b1d4;">text</div>
+        <div class="top-text" style="background-color:wheat;">Književnost je umetnost pisane reči koja izražava ljudska osećanja, misli i iskustva kroz priče, pesme i romane. Kroz vekove je služila kao sredstvo komunikacije, edukacije i zabave.</div>
+        <div class="mid-text" style="background-color:wheat;">Kroz književnost upoznajemo različite svetove i unutrašnje živote likova, što nam pomaže da razvijemo empatiju. Dobra književnost podstiče na razmišljanje i ostavlja trajan utisak.</div>
       </div>
     </div>
     <div class="bottom-section">
       <div class="bottom-texts">
-        <div class="bottom-text" style="background-color:#a1b1d4;">text</div>
-        <div class="bottom-text" style="background-color:#a1b1d4;">text</div>
+        <div class="bottom-text" style="background-color:wheat;">August Šenoa bio je jedan od najznačajnijih hrvatskih književnika 19. veka i začetnik moderne hrvatske književnosti. Njegova dela povezuju realizam i romantizam, a posebno se ističu povijesni romani poput Zlatarevo zlato.</div>
+        <div class="bottom-text" style="background-color:wheat;">Kao pisac i urednik, Šenoa je uticao na oblikovanje hrvatskog književnog jezika i književnog ukusa svog doba. Njegova dela i danas se čitaju zbog bogate radnje i snažnog domoljubnog duha.</div>
       </div>
-      <div class="right-picture"><img src="" style="max-height: 100%; max-width: 100%; object-fit:cover;"></div>
+      <div class="right-picture"><img src="https://nova-akropola.com/wp-content/uploads/2022/07/%C5%A0enoa-za-web-1.jpg" style="max-height: 100%; max-width: 100%; object-fit:cover;"></div>
     </div>
     <div class="extra-row">
-      <div class="extra-text" style="background-color:#a1b1d4;">text</div>
-      <div class="extra-text" style="background-color:#a1b1d4;">text</div>
+      <div class="extra-text" style="background-color:wheat;">Najduža rečenica u književnosti nalazi se u romanu Les Misérables Viktora Igoa – ima preko 800 reči i proteže se na više stranica!</div>
+      <div class="extra-text" style="background-color:wheat;">Drakula Brama Stokera inspirisan je stvarnom osobom – Vladom Tepešom, poznatim kao "Nabijač", vlaškim knezom iz 15. veka.</div>
     </div>
     <div class="extra-row">
-      <div class="extra-text" style="background-color:#a1b1d4;">text</div>
-      <div class="extra-text" style="background-color:#a1b1d4;">text</div>
+      <div class="extra-text" style="background-color:wheat;">Ernest Hemingvej napisao je čuvenu priču od samo šest reči: "For sale: baby shoes, never worn." – koja se često navodi kao primer moćnog minimalističkog pisanja.</div>
+      <div class="extra-text" style="background-color:wheat;">J.K. Rowling bila je odbijena od 12 izdavača pre nego što je Harry Potter objavljen – danas je njena serija među najprodavanijima u istoriji.</div>
     </div>
     <div class="final-row">
-      <div class="final-picture"><img src="" style="max-height: 100%; max-width: 100%; object-fit:cover;"></div>
+      <div class="final-picture"><img src="https://stories.jkrowling.com/wp-content/uploads/2021/09/Shot-B-105_V2_CROP-e1630873059779.jpg" style="max-height: 100%; max-width: 100%; object-fit:cover;"></div>
       <div class="final-texts">
-        <div class="final-text" style="background-color:#a1b1d4;">text</div>
-        <div class="final-text" style="background-color:#a1b1d4;">text</div>
+        <div class="final-text" style="background-color:wheat;">J.K. Rowling je britanska književnica najpoznatija po serijalu o Harryju Potteru, koji je postao globalni fenomen. Knjige su prevedene na više od 80 jezika i prodane u stotinama miliona primeraka.</div>
+        <div class="final-text" style="background-color:wheat;">Pre nego što je postigla uspeh, živela je kao samohrana majka i bila odbijena od više izdavača. Njena priča inspiriše mnoge kao primer istrajnosti i snage mašte.</div>
       </div>
     </div>
   </div>
